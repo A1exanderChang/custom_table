@@ -3,32 +3,22 @@ server:
 
 mysql:
   yjzhdd:
-    # druid????
-    url: jdbc:mysql://www.yugaosu.com:33306/yjzhdd?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&TimeZone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/custom_table?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&TimeZone=Asia/Shanghai
     username: root
     password: jingguan+705
     driver-class-name: com.mysql.cj.jdbc.Driver
-    # ?????
     initial-size: 5
-    # ????
     min-idle: 5
-    # ????
     max-active: 20
-    # ??????
     max-wati: 60000
-    # ????????????????????ms
     time-between-eviction-runs-millis: 60000
-    # ?????????????
     min-evictable-idle-time-millis: 30000
-    # ??????????
     validation-query: select 1 from dual
     test-while-idle: true
     test-on-borrow: false
     test-on-return: false
-    # ???????filters
     filters: stat
 
-# ??
 logging:
   level:
     root: info
