@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+mysql:
+  yjzhdd:
+    # druid????
+    url: jdbc:mysql://www.yugaosu.com:33306/yjzhdd?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&TimeZone=Asia/Shanghai
+    username: root
+    password: jingguan+705
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # ?????
+    initial-size: 5
+    # ????
+    min-idle: 5
+    # ????
+    max-active: 20
+    # ??????
+    max-wati: 60000
+    # ????????????????????ms
+    time-between-eviction-runs-millis: 60000
+    # ?????????????
+    min-evictable-idle-time-millis: 30000
+    # ??????????
+    validation-query: select 1 from dual
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    # ???????filters
+    filters: stat
+
+# ??
+logging:
+  level:
+    root: info
+    com:
+      jgyjy:
+        yjzhdd: debug
+  file:
+    name: D:/javaSoft/log/custom_table/custom_table.log
+  pattern:
+    console: '%d{yyyy-MM-dd hh:mm:ss} [%thread] %-5level %logger{50} - %msg%n'
+    file: '%d{yyyy-MM-dd hh:mm:ss} === [%thread] === %-5level === %logger{50} === - %msg%n'
+    logback:
+      rollingpolicy:
+        max-file-size: 100MB
